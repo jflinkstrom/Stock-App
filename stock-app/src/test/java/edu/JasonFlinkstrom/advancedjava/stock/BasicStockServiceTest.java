@@ -22,7 +22,7 @@ public class BasicStockServiceTest {
     @Test
     public void getQuotePosTest() {
         StockQuote result = basicStockService.getQuote(symbol);
-        assertEquals(result.getSymbol(), "APPL");
+        assertEquals("Verify getSymbol returns correct string", result.getSymbol(), "APPL");
     }
 
     /**
