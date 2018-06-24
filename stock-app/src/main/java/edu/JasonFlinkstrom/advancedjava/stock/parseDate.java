@@ -9,7 +9,7 @@ import java.util.Date;
 /**
  * Converts a String to a Calendar
  */
-public class parseDate {
+public class ParseDate {
 
     @NotNull
     public static Calendar getParseDate(String calDate) {
