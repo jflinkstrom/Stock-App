@@ -32,16 +32,16 @@ public class BasicStockService implements StockService {
         Date start = from.getTime();
         Date end = until.getTime();
 
-        Calendar calFrom = Calendar.getInstance();
-        calFrom.setTime(start);
+        Calendar calendarFrom = Calendar.getInstance();
+        calendarFrom.setTime(start);
 
         List<StockQuote> stockQuote = new ArrayList<>();
 
         while(start.before(end)) {
             stockQuote.add(new StockQuote(symbol, start, new BigDecimal(100)));
-            calFrom.setTime(start);
-            calFrom.add(Calendar.DAY_OF_YEAR, 1);
-            start = calFrom.getTime();
+            calendarFrom.setTime(start);
+            calendarFrom.add(Calendar.DAY_OF_YEAR, 1);
+            start = calendarFrom.getTime();
         }
         return stockQuote;
     }
@@ -62,8 +62,8 @@ public class BasicStockService implements StockService {
         Date end = until.getTime();
         int intTime = 0;
 
-        Calendar calFrom = Calendar.getInstance();
-        calFrom.setTime(start);
+        Calendar calendarFrom = Calendar.getInstance();
+        calendarFrom.setTime(start);
 
         List<StockQuote> stockQuote = new ArrayList<>();
 
@@ -79,9 +79,9 @@ public class BasicStockService implements StockService {
 
         while(start.before(end)) {
             stockQuote.add(new StockQuote(symbol, start, new BigDecimal (100)));
-            calFrom.setTime(start);
-            calFrom.add(Calendar.HOUR_OF_DAY, intTime);
-            start = calFrom.getTime();
+            calendarFrom.setTime(start);
+            calendarFrom.add(Calendar.HOUR_OF_DAY, intTime);
+            start = calendarFrom.getTime();
         }
         return stockQuote;
     }
