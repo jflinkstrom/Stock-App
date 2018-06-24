@@ -74,7 +74,7 @@ public class BasicStockService implements StockService {
                 break;
             case HOURLY: intTime = 1;
                 break;
-            default : break;
+            default : intTime = 24;
         }
 
         while(start.before(end)) {
